@@ -6,7 +6,7 @@ import GoogleAuth from './GoogleAuth';
 function Header() {
     return (
         <div className="ui secondary pointing menu">
-            <Link to="/" className='item'>Streamy</Link>
+            <Link to="/" className='item'>uTubeLive</Link>
 
             <div className="right menu">
                 <Link to="/" className='item'>All Streams</Link>

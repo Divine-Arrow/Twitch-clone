@@ -22,7 +22,7 @@ class StreamList extends Component {
                 </div>
             )
         }
-    }
+    };
 
     renderList() {
         return this.props.streams.map( stream => {
@@ -31,7 +31,7 @@ class StreamList extends Component {
                     {this.renderAdmin(stream)}
                     <i className="large middle aligned icon camera"></i>
                     <div className="content">
-                        {stream.title}
+                        <Link to={`/streams/${stream.id}`}>{stream.title}</Link>
                         <div className="description">{stream.description}</div>
                     </div>
                 </div>
@@ -47,7 +47,7 @@ class StreamList extends Component {
                 </div>
             )
         }
-    }
+    };
 
     render() {
         return (
@@ -57,7 +57,7 @@ class StreamList extends Component {
                 {this.renderCreate()}
             </div>
         );
-    }
+    };
 };
 
 const mapStateToProps = (state) => {
