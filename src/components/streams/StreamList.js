@@ -25,7 +25,13 @@ class StreamList extends Component {
     };
 
     renderList() {
-        return this.props.streams.map( stream => {
+
+        const allStreams = this.props.streams;
+        const ownStreams = allStreams.filter(stream => stream.userId === this.props.currentUserId);
+
+        // return ownStreams.map( stream => {
+
+        return allStreams.map( stream => {
             return (
                 <div className="item" key={stream.id}>
                     {this.renderAdmin(stream)}
@@ -61,7 +67,9 @@ class StreamList extends Component {
 };
 
 const mapStateToProps = (state) => {
+    // const streams = Object.values(state.streams).filter(stream => stream.userId === state.auth.userId)
     return {
+        // streams: streams,
         streams: Object.values(state.streams),
         currentUserId: state.auth.userId,
         isSignedIn: state.auth.isSignedIn
