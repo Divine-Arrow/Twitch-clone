@@ -45,7 +45,7 @@ class StreamShow extends Component {
             return (<div>Loading...</div>)
 
         const { id, title, description } = this.props.stream;
-        return (
+        /* return (
             <div>
                 <h1>{title}</h1>
                 <video
@@ -56,7 +56,35 @@ class StreamShow extends Component {
                 <p>Stream Id is: <strong>{id}</strong></p>
                 <h5>{description}</h5>
             </div>
-        );
+        ); */
+
+        return(
+            <div className="ui link cards">
+                <div  style={{width: "100vw"}} className="card">
+                    <div className="image">
+                    {/* <img src="/images/avatar2/large/matthew.png"/> */}
+                    <video
+                        ref={this.videoRef}
+                        style={{width: '100%'}}
+                        controls
+                    ></video>
+                    </div>
+                    <div className="content">
+                        <div className="header">{title}</div>
+                        <div className="meta">
+                            <a>StreamId: <strong>{id}</strong></a>
+                        </div>
+                        <div className="description"> {description} </div>
+                    </div>
+                    <div className="extra content">
+                    <span className="right floated"> 2000 Views </span>
+                    <span> <i className="user icon"></i> 5 Live </span>
+                    </div>
+                </div>
+            </div>
+        )
+
+        
     }
 }
 
